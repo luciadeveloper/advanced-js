@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+    </head>
+
+    <body>
+        
+
+    </body>
+    <script>
+        
+        /*
+        * Currying
+        * Consiste en dividir una función para que se pueda usar por partes, 
+        * así evitar ejecutar varias veces la parte de la función que no haga falta.
+        * La primera funcion, curry_cost devuelve la segunda. La segunda la metemos en una variable, step1 y así la podemos utilizar sin tener que ejecutar curry_cost. Ya tendrá guardado el valor creado por esa. 
+        */
+        function curry_cost(initial_total) {
+            let total_cost = initial_total
+            return function(single_cost) {
+                total_cost = total_cost + single_cost
+                console.log('total cost:' +total_cost)
+            }
+        }
+        
+        let step1 = curry_cost(0)
+
+        step1(100)
+        step1(300)
+        step1(200)
+
+        
+        /*
+        function test (a,b,c) {
+            console.log(arguments)
+            for (let item of arguments) {
+                console.log(item)
+            }
+        }
+        test('apple', 'bannana', 'milk')
+
+        */
+
+        /*
+        var buttons = document.getElementsByTagName('button');
+        for(let i = 0; i<buttons.length; i++) {
+            buttons[i].addEventListener('click', () => {
+                console.log(buttons[i].innerHTML)
+            })
+        }
+        */
+    </script>
+</html>
